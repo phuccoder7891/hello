@@ -31,9 +31,6 @@ RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php
 
 
-ErrorDocument 503 /pages/404.php
-ErrorDocument 502 /pages/404.php
-ErrorDocument 508 /pages/404.php
 
 # Rewrite Url
 
@@ -72,7 +69,7 @@ RewriteRule ^napmomo$ /pages/naptien/napmomo.php [L]
 RewriteRule ^napmomo/$ /pages/naptien/napmomo.php [L]
 RewriteRule ^muahost-ajax$ /ajax/dichvu/muahost.php [L]
 RewriteRule ^quanly-host-ajax$ /ajax/dichvu/quanlyhost.php [L]
-ErrorDocument 404 /404.php
+ErrorDocument 404 /503.html
 #dichvu
 RewriteRule ^dichvu$ /pages/dichvu/index.php [L]
 RewriteRule ^dichvu/$ /pages/dichvu/index.php [L]
