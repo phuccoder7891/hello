@@ -1,0 +1,91 @@
+RewriteEngine on
+
+RewriteCond %{HTTP} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R]
+# Run Php without filename extension
+Options All -Indexes
+IndexIgnore *
+IndexIgnore *.png *.zip *.jpg *.gif *.doc *.js *.css
+
+AddDefaultCharset UTF-8
+
+#secure headers
+
+
+Header set X-Frame-Options "DENY"
+Header set X-XSS-Protection "1; mode=block"
+Header set X-Content-Type-Options "nosniff"
+Header unset X-Powered-By
+Header add Strict-Transport-Security "max-age=157680000"
+Header set Referrer-Policy "origin"
+
+
+AddType application/x-httpd-php .bop .foo .133t
+
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+
+RewriteRule ^(.*)$ $1.php
+
+
+ErrorDocument 503 /pages/404.php
+ErrorDocument 502 /pages/404.php
+ErrorDocument 508 /pages/404.php
+
+# Rewrite Url
+
+RewriteRule ^login$ /login.php [L]
+RewriteRule ^login/$ /login.php [L]
+RewriteRule ^login-ajax$ /ajax/nguoidung/dangnhap.php [L]
+RewriteRule ^reg/$ /reg.php [L]
+RewriteRule ^reg$ /reg.php [L]
+RewriteRule ^reg-ajax$ /ajax/nguoidung/dangky.php [L]
+RewriteRule ^logout$ /logout.php [L]
+RewriteRule ^forgot/$ /quenmk.php [L]
+RewriteRule ^forgot$ /quenmk.php [L]
+RewriteRule ^forgot-ajax$ /ajax/nguoidung/quenmk.php [L]
+RewriteRule ^taikhoancuatoi/$ /profile.php [L]
+RewriteRule ^taikhoancuatoi$ /profile.php [L]
+RewriteRule ^profile-ajax$ /ajax/nguoidung/profile.php [L]
+
+RewriteRule ^client/$ /khachhang.php [L]
+RewriteRule ^client$ /khachhang.php [L]
+RewriteRule ^naptien$ /pages/naptien.php [L]
+RewriteRule ^naptien/$ /pages/naptien.php [L]
+RewriteRule ^napatm/$ /pages/naptien/napatm.php [L]
+RewriteRule ^napatm$ /pages/naptien/napatm.php [L]
+RewriteRule ^napthecao/$ /pages/naptien/napcardvip.php [L]
+RewriteRule ^napthecao$ /pages/naptien/napcardvip.php [L]
+RewriteRule ^napthecao-ajax$ /ajax/naptien/napcardvip.php [L]
+RewriteRule ^napthe$ /pages/naptien/napcard.php [L]
+RewriteRule ^napthe/$ /pages/naptien/napcard.php [L]
+RewriteRule ^napthe-ajax$ /ajax/naptien/napcard.php [L]
+RewriteRule ^naptsr/$ /pages/naptien/naptsr.php [L]
+RewriteRule ^naptsr$ /pages/naptien/naptsr.php [L]
+RewriteRule ^napmbbank$ /pages/naptien/mbbank.php [L]
+RewriteRule ^napmbbank/$ /pages/naptien/mbbank.php [L]
+RewriteRule ^naptsr-ajax$ /ajax/naptien/naptsr.php [L]
+RewriteRule ^napmomo$ /pages/naptien/napmomo.php [L]
+RewriteRule ^napmomo/$ /pages/naptien/napmomo.php [L]
+RewriteRule ^muahost-ajax$ /ajax/dichvu/muahost.php [L]
+RewriteRule ^quanly-host-ajax$ /ajax/dichvu/quanlyhost.php [L]
+ErrorDocument 404 /404.php
+#dichvu
+RewriteRule ^dichvu$ /pages/dichvu/index.php [L]
+RewriteRule ^dichvu/$ /pages/dichvu/index.php [L]
+RewriteRule ^muahost$ /pages/dichvu/muahost.php [L]
+RewriteRule ^muahost/$ /pages/dichvu/muahost.php [L]
+RewriteRule ^lichsumuadichvu$ /pages/dichvu/lichsumua.php [L]
+RewriteRule ^lichsumuadichvu/$ /pages/dichvu/lichsumua.php [L]
+RewriteRule ^dichvu$ /pages/muakey/index.php [L]
+RewriteRule ^dichvu$ /pages/muakey/index.php [L]
+RewriteRule ^dien-dan$ /pages/dien-dan/index.php [L]
+RewriteRule ^dien-dan$ /pages/dien-dan/index.php [L]
+RewriteRule ^spamsms$ /pages/spamsms/index.php [L]
+RewriteRule ^spamsms$ /pages/spamsms/index.php [L]
+RewriteRule ^upanh$ /pages/upanh/index.php [L]
+RewriteRule ^code$ /pages/code/index.php [L]
+RewriteRule ^code$ /pages/code/index.php [L]
