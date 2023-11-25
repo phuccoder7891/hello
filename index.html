@@ -1,30 +1,419 @@
 
 <!DOCTYPE html>
 <html>
+  <link rel="stylesheet" href="assets/css/index.css">
+  <script type="text/javascript" src="assets/js/index.js"></script>
+  <link rel="shortcut icon" href="https://i.imgur.com/yxoKWjo.jpg" type="image/x-icon">
+  <title>DIỄN ĐÀN</title>
 <head>
-  <meta charSet="utf-8"/>
-        <meta property="og:url" content="//bluevn.host"/>
-        <meta name="description" content="SoundPanel - Hệ Thống Âm Nhạc Số 1 Việt Nam">
-        <meta name="author" content="ThanhDieuTV">
-        <meta name="keywords" content="SoundPanel , SoundCloud , Nhạc , Nhạc Remix">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <link rel="shortcut icon" href="//i.imgur.com/LC5mbkf.jpg" type="image/x-icon">
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Welcome ThanhDieu &mdash; Profile Home"/>
-        <meta name="next-head-count" content="13"/>
-        <title>HELLO</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="true"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true"/>
-        <link rel="stylesheet" href="/css/css2.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-        <link rel="stylesheet" href="/css/css1.css" />
-          <link rel="stylesheet" href="style.css">
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<body class="night">
+<div id="preloader" class="bruh">
+<div id="loader">
+<div class="loader-item"></div>
+<div class="loader-item"></div>
+<div class="loader-item"></div>
+<div class="sidenav-toggler d-none d-xl-block" data-action="sidenav-unpin" data-target="#sidenav-main">
+<div class="sidenav-toggler-inner">
+<i class="sidenav-toggler-line night"></i>
+<i class="sidenav-toggler-line night"></i>
+<i class="sidenav-toggler-line night"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="navbar-inner">
+</div>
+        </ul>
+    </div>
+  </body>
+  <style>
+    body {
+      background-color: #000;
+      margin: 0;
+    }
+
+    .topnav {
+      background-color: #111;
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    .topnav h1 {
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      font-size: 24px;
+      margin: 0;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+    }
+
+    .panel-body {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .komen {
+      border: none;
+      width: 100%;
+      height: 400px;
+    }
+    #preloader{height:100vh;display:flex;align-items:center;justify-content:center;background:#151320;position:absolute;top:0;bottom:0;right:0;left:0;z-index:99999}#loader{width:100px;height:100px;border-radius:50%;perspective:800px}#loader .loader-item{position:absolute;width:100%;height:100%;border-radius:50%}#loader .loader-item:nth-child(1){border-bottom:6px solid #f13a8f;transform:rotateX(35deg) rotateY(-45deg);animation:rotate-one 1s linear infinite}#loader .loader-item:nth-child(2){border-right:6px solid #4bc8eb;transform:rotateX(50deg) rotateY(10deg);animation:rotate-two 1s linear infinite}#loader .loader-item:nth-child(3){border-top:6px solid #36f372;transform:rotateX(35deg) rotateY(55deg);animation:rotate-three 1s linear infinite}@keyframes rotate-one{to{transform:rotateX(35deg) rotateY(-45deg) rotateZ(360deg)}}@keyframes rotate-two{to{transform:rotateX(50deg) rotateY(10deg) rotateZ(360deg)}}@keyframes rotate-three{to{transform:rotateX(35deg) rotateY(55deg) rotateZ(360deg)}}
+  </style>
+  <style>
+                        .toggle-box-label-left:empty {
+                            margin-left: -10px;
+                        }
+                        
+                        .toggle-box-label-left:after,
+                        .toggle-box-label-left:before {
+                            box-sizing: border-box;
+                            margin: 0;
+                            padding: 0;
+                            /*transition*/
+                            
+                            -webkit-transition: 0.25s ease-in-out;
+                            -moz-transition: 0.25s ease-in-out;
+                            -o-transition: 0.25s ease-in-out;
+                            transition: 0.25s ease-in-out;
+                            outline: none;
+                        }
+                        
+                        .toggle-box input[type=checkbox],
+                        .toggle-box input[type=checkbox]:active {
+                            position: absolute;
+                            top: -5000px;
+                            height: 0;
+                            width: 0;
+                            opacity: 0;
+                            border: none;
+                            outline: none;
+                        }
+                        
+                        .toggle-box label {
+                            display: inline-block;
+                            position: relative;
+                            padding: 0px;
+                            margin-bottom: 20px;
+                            font-size: 14px;
+                            line-height: 16px;
+                            cursor: pointer;
+                            color: rgba(149, 149, 149, 0.51);
+                            font-weight: normal;
+                        }
+                        
+                        .toggle-box-label-left:after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            z-index: 1;
+                            line-height: 34px;
+                            text-indent: 40px;
+                            height: 16px;
+                            width: 16px;
+                            margin: 4px;
+                            /*border-radius*/
+                            
+                            -webkit-border-radius: 100%;
+                            -moz-border-radius: 100%;
+                            border-radius: 100%;
+                            right: 26px;
+                            bottom: 0px;
+                            background: #FFB200;
+                            transform: rotate(-45deg);
+                            box-shadow: 0 0 10px white;
+                        }
+                        
+                        .toggle-box-label-left:before {
+                            content: "";
+                            display: inline-block;
+                            width: 40px;
+                            height: 24px;
+                            /*border-radius*/
+                            
+                            -webkit-border-radius: 16px;
+                            -moz-border-radius: 16px;
+                            border-radius: 16px;
+                            background: rgba(255, 255, 255, 0.15);
+                            vertical-align: middle;
+                            margin: 0 10px;
+                            border: 2px solid #FFB200;
+                        }
+                        
+                        .toggle-box input[type=checkbox]:checked + .toggle-box-label-left:after {
+                            right: 17px;
+                            box-shadow: 5px 5px 0 0 #eee;
+                            background: transparent;
+                        }
+                        
+                        .toggle-box input[type=checkbox]:checked + .toggle-box-label-left:before {
+                            background: rgba(0, 0, 0, 0.15);
+                            border: 2px solid white;
+                        }
+                        
+                        .toggle-box input[type=checkbox] + .toggle-box-label-left {
+                            color: rgba(250, 250, 250, 0.51);
+                            font-weight: bold;
+                        }
+                        
+                        .toggle-box input[type=checkbox]:checked + .toggle-box-label-left {
+                            color: rgba(149, 149, 149, 0.51);
+                            font-weight: normal;
+                        }
+                        
+                        .toggle-box input[type=checkbox]:checked + .toggle-box-label-left + .toggle-box-label {
+                            color: rgba(250, 250, 250, 0.51);
+                            font-weight: bold;
+                        }
+                    </style>
 </head>
 <body>
-	
-  <div class="container">
-    <h1>NO CAPCHA NO RULE NO FILE WALL </h1>
+  <div class="topnav">
+    <h1>Diễn Đàn</h1>
+    <div class="toggle-box" style="padding: 4px 0;">
+<h5 style="margin-bottom: 2px;display: inline-block;">Mode</h5>
+<input type="checkbox" name="checkbox1" id="toggle-box-checkbox">
+<label for="toggle-box-checkbox" class="toggle-box-label-left" style="margin-bottom: 0;"></label>
+<label for="toggle-box-checkbox" class="toggle-box-label"></label>
+</div>
+  </div>
+  <div class="panel-body">
+    <iframe src="https://www5.cbox.ws/box/?boxid=947916&boxtag=OI2ajj" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
+</body>
+<script id="rendered-js">
+            function getCookie(cname) {
+                let name = cname + "=";
+                let decodedCookie = decodeURIComponent(document.cookie);
+                let ca = decodedCookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+            let theme = getCookie("theme");
+            if (theme == "night") {
+                $('.navbar-light').addClass('night');
+                $('.sidenav-toggler-line').addClass('night');
+                $('.nav-link').addClass('night');
+                $('.card-header').addClass('night');
+                $('.card-body').addClass('night');
+                $('.card').addClass('night');
+                $('.bg-white').addClass('bg-night');
+                $('.bg-default').addClass('bg-night');
+                $('.card').addClass('night');
+                $('.card').addClass('night');
+                $('body').addClass('night');
+                //$('.nav-link-text').addClass('night');
 
+
+                $('body').removeClass('light');
+                $('.bg-night').removeClass('bg-white');
+                $('.bg-night').removeClass('bg-default');
+            } else if (theme == "light") {
+                document.getElementById("toggle-box-checkbox").checked = true;
+                $('.bg-night').addClass('bg-white');
+                $('.bg-night').addClass('bg-default');
+                $('body').addClass('light');
+
+                $('.card-header').removeClass('night');
+                $('body').removeClass('night');
+                $('.card-body').removeClass('night');
+                $('.card').removeClass('night');
+                $('.bg-white').removeClass('bg-night');
+                $('.bg-default').removeClass('bg-night');
+                $('.navbar-light').removeClass('night');
+                $('.sidenav-toggler-line').removeClass('night');
+                $('.nav-link').removeClass('night');
+            }
+            $('#toggle-box-checkbox').on('change', function() {
+                if (this.checked) {
+                    var expires = (new Date(Date.now() + 86400 * 1000)).toUTCString();
+                    document.cookie = 'theme=light; expires=' + expires + ';';
+                    $('.bg-night').addClass('bg-white');
+                    $('.bg-night').addClass('bg-default');
+                    $('body').addClass('light');
+
+                    $('.card-header').removeClass('night');
+                    $('body').removeClass('night');
+                    $('.card-body').removeClass('night');
+                    $('.card').removeClass('night');
+                    $('.bg-white').removeClass('bg-night');
+                    $('.bg-default').removeClass('bg-night');
+                    $('.navbar-light').removeClass('night');
+                    $('.sidenav-toggler-line').removeClass('night');
+                    $('.nav-link').removeClass('night');
+
+
+                } else {
+                    var expires = (new Date(Date.now() + 86400 * 1000)).toUTCString();
+                    document.cookie = 'theme=night; expires=time() + 604800)';
+                    $('.navbar-light').addClass('night');
+                    $('.sidenav-toggler-line').addClass('night');
+                    $('.nav-link').addClass('night');
+                    $('.card-header').addClass('night');
+                    $('.card-body').addClass('night');
+                    $('.card').addClass('night');
+                    $('.bg-white').addClass('bg-night');
+                    $('.bg-default').addClass('bg-night');
+                    $('.card').addClass('night');
+                    $('.card').addClass('night');
+                    $('body').addClass('night');
+                    //$('.nav-link-text').addClass('night');
+
+
+                    $('body').removeClass('light');
+                    $('.bg-night').removeClass('bg-white');
+                    $('.bg-night').removeClass('bg-default');
+                }
+            });
+            // run demo if in searchresult preview
+            function demo() {
+                setInterval(function() {
+                    $("#toggle-box-checkbox").trigger('click');
+                }, 1000);
+            }
+            if (document.location.pathname.indexOf('fullcpgrid') > -1) {
+                demo();
+            }
+            //# sourceURL=pen.js
+        </script>
+<script>
+            // gán currentLocation là đường dẫn web
+            const currentLocation = lehoangphuc.site;
+            //chọn tất cả thẻ a
+            const menuItem = document.querySelectorAll('.nav-link');
+            //gán menuLength = với số lượng thẻ a
+            const menuLength = menuItem.length
+                //cho chạy từ i = 0 tới số lượng thẻ a
+            for (let i = 0; i < menuLength; i++) {
+                //nếu href a = đường dẫn web thì thêm class active vào thẻ cha
+                if (menuItem[i].href === currentLocation) {
+                    menuItem[i].classList.add('active')
+                }
+            }
+        </script>
+<script>
+            //<![CDATA[ 
+            $(window).load(function() {
+                $('#loader').delay(200).fadeOut('fast', function() {
+                    $('#preloader').removeAttr('id');
+                    $('body').removeAttr('style');
+                });
+            });
+        </script>
+        <div class="snowflakes" aria-hidden="true">
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+<div class="snowflake"></div>
+</div>
+
+<style>
+  @-webkit-keyframes snowflakes-fall {
+    0% {top:-10%}
+    100% {top:100%}
+  }
+  @-webkit-keyframes snowflakes-shake {
+    0%,100% {-webkit-transform:translateX(0);transform:translateX(0)}
+    50% {-webkit-transform:translateX(80px);transform:translateX(80px)}
+  }
+  @keyframes snowflakes-fall {
+    0% {top:-10%}
+    100% {top:100%}
+  }
+  @keyframes snowflakes-shake {
+    0%,100%{ transform:translateX(0)}
+    50% {transform:translateX(80px)}
+  }
+  .snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    position:fixed;
+    top:-10%;
+    z-index:9999;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor:default;
+    -webkit-animation-name:snowflakes-fall,snowflakes-shake;
+    -webkit-animation-duration:10s,3s;
+    -webkit-animation-timing-function:linear,ease-in-out;
+    -webkit-animation-iteration-count:infinite,infinite;
+    -webkit-animation-play-state:running,running;
+    animation-name:snowflakes-fall,snowflakes-shake;
+    animation-duration:10s,3s;
+    animation-timing-function:linear,ease-in-out;
+    animation-iteration-count:infinite,infinite;
+    animation-play-state:running,running;
+  }
+  .snowflake:nth-of-type(0){
+    left:5%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s
+  }
+  .snowflake:nth-of-type(1){
+    left:15%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s
+  }
+  .snowflake:nth-of-type(2){
+    left:25%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s
+  }
+  .snowflake:nth-of-type(3){
+    left:35%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s
+  }
+  .snowflake:nth-of-type(4){
+    left:30%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s
+  }
+  .snowflake:nth-of-type(5){
+    left:40%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s
+  }
+  .snowflake:nth-of-type(6){
+    left:50%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s
+  }
+  .snowflake:nth-of-type(7){
+    left:60%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s
+  }
+  .snowflake:nth-of-type(8){
+    left:55%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s
+  }
+  .snowflake:nth-of-type(9){
+    left:10%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s
+  }
+  .snowflake:nth-of-type(10){
+    left:75%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s
+  }
+  .snowflake:nth-of-type(11){
+    left:25%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s
+  }
+  .snowflake:nth-of-type(12){
+    left:95%;-webkit-animation-delay:1.5s,0s;animation-delay:1.5s,0s
+  }
+  .snowflake:nth-of-type(13){
+    left:90%;-webkit-animation-delay:3.5s,1.5s;animation-delay:3.5s,1.5s
+  }
+  .snowflake:nth-of-type(14){
+    left:80%;-webkit-animation-delay:2.5s,0s;animation-delay:2.5s,0s
+  }
+  .snowflake:nth-of-type(15){
+    left:45%;-webkit-animation-delay:1.7s,2s;animation-delay:1.7s,2s
+  }
+</style>
 </html>
