@@ -1,32 +1,27 @@
-RewriteEngine on
-
-RewriteCond %{HTTP} off
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R]
-# Run Php without filename extension
-Options All -Indexes
-IndexIgnore *
-IndexIgnore *.png *.zip *.jpg *.gif *.doc *.js *.css
-
-AddDefaultCharset UTF-8
-
-#secure headers
-
-
-Header set X-Frame-Options "DENY"
-Header set X-XSS-Protection "1; mode=block"
-Header set X-Content-Type-Options "nosniff"
-Header unset X-Powered-By
-Header add Strict-Transport-Security "max-age=157680000"
-Header set Referrer-Policy "origin"
-
-
-AddType application/x-httpd-php .bop .foo .133t
-
-RewriteEngine on
-RewriteBase /
-RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteCond %{REQUEST_FILENAME}.php -f
-
-RewriteRule ^(.*)$ $1.php
-ErrorDocument 404 /503.html
+<files ".htaccess">
+    order allow,deny
+    deny from all
+    </files>
+    
+    RewriteEngine On
+    ErrorDocument 404 /503.html
+    
+    #LOGIN & SIGNUP
+    RewriteRule ^login$ login.php [L]
+    RewriteRule ^register$ signup.php [L]
+    RewriteRule ^logout$ logout.php [L]
+    RewriteRule ^error$ config/error-db.php [L]
+    
+    #LINK CORE
+    RewriteRule ^home home.php [L]
+    RewriteRule ^nap-tien core/nap-tien.php [L]
+    RewriteRule ^profile core/profile.php [L]
+    RewriteRule ^panel-ddos core/panel-ddos.php [L]
+    RewriteRule ^spam-sms core/spam-sms.php [L]
+    RewriteRule ^api-manager core/api-manager.php [L]
+    RewriteRule ^mua-key core/mua-key.php [L]
+    RewriteRule ^tool core/tool.php [L]
+    RewriteRule ^huongdan core/huongdan.php [L]
+    RewriteRule ^faq core/faq.php [L]
+    RewriteRule ^bang-phong-than core/bang-phong-than.php [L]
+    # LINK QUẢN TRỊ
